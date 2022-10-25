@@ -2,7 +2,9 @@ class Team
   attr_reader :team_name, :city,
               :roster,    :player_count,
               :long_term_players,
-              :short_term_players
+              :short_term_players,
+              :details
+
 
   def initialize(team_name, city)
     @team_name = team_name
@@ -11,6 +13,10 @@ class Team
     @player_count = 0
     @long_term_players = []
     @short_term_players = []
+    @details = {
+      "total_value" => total_value,
+      "player_count" => @player_count
+      }
   end
 
   def add_player(player)
